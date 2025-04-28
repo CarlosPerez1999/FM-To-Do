@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "module": "app.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+   "dev": "bunx nodemon src/app.ts"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
