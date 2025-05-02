@@ -2,13 +2,12 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme{
-  --color-primary:hsl(0, 0%, 98%);
-  --color-secondary:hsl(220, 98%, 61%) ;
+  --color-primary:hsl(0, 0%, 100%);
+  --color-secondary:hsl(0, 0%, 98%);
   --color-light:hsl(235, 21%, 11%);
-  --color-background:hsl(233, 11%, 84%);
+  --color-accent: hsl(220, 98%, 61%);
   
-  --color-primary-dark:hsl(0, 0%, 98%);
-  --color-secondary-dark:hsl(220, 98%, 61%);
-  --color-dark: hsl(0, 0%, 98%);
-  --color-background-dark:hsl(233, 11%, 84%);
+  --color-primary-dark:hsl(235, 24%, 19%);
+  --color-secondary-dark:hsl(235, 21%, 11%);
+  --color-dark: hsl(233, 11%, 84%);
 }
