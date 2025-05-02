@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { TodoItemComponent } from "./todo-item/todo-item.component";
 import { TaskI } from '../../interfaces/task.interface';
 import { TasksService } from '../../services/tasks.service';
@@ -11,6 +11,9 @@ import { TasksService } from '../../services/tasks.service';
 export class TodoListComponent { 
   todos = input<TaskI[] | undefined>()
   tasksService = inject(TasksService)
+  todosLeft = computed(() => {
+    return this.todos()?.filter((todo) => todo.completed === false)
+  })
 
   delete(id: number) {
     this.tasksService.deleteTask(id).subscribe();
