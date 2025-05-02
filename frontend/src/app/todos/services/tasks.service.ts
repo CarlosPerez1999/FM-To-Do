@@ -10,6 +10,7 @@ import { catchError, Observable, tap, throwError } from 'rxjs';
 export class TasksService {
   private http = inject(HttpClient);
   private tasks = signal<TaskI[]>([]);
+  readonly tasks$ = this.tasks.asReadonly();
 
   getTasks(): Observable<TaskI[]> {
     return this.http.get<TaskI[]>(`${environment.apiUrl}/tasks`).pipe(
@@ -20,7 +21,7 @@ export class TasksService {
     );
   }
 
-  createTasks(data: TaskI): Observable<TaskI> {
+  createTask(data: TaskI): Observable<TaskI> {
     return this.http.post<TaskI>(`${environment.apiUrl}/tasks`, data).pipe(
       tap((createdTask) =>
         this.tasks.update((currTasks) => [...currTasks, createdTask])
@@ -31,7 +32,7 @@ export class TasksService {
     );
   }
 
-  deleteTasks(id: number): Observable<void> {
+  deleteTask(id: number): Observable<void> {
     return this.http.delete<void>(`${environment.apiUrl}/tasks/${id}`).pipe(
       tap((deletedTask) =>
         this.tasks.update((currTasks) =>
@@ -44,7 +45,7 @@ export class TasksService {
     );
   }
 
-  updateTasks(id: number, data: TaskI): Observable<TaskI> {
+  updateTask(id: number, data: TaskI): Observable<TaskI> {
     return this.http.put<TaskI>(`${environment.apiUrl}/tasks/${id}`, data).pipe(
       tap((updatedTask) =>
         this.tasks.update((currTasks) =>
