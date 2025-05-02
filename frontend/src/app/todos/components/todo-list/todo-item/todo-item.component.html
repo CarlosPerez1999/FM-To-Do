@@ -1,4 +1,4 @@
-<li class="flex w-full items-center justify-between py-1 px-4 border-b-2 border-gray-300">
+<li class="flex w-full items-center justify-between py-2 px-4 border-b-2 border-slate-300 dark:border-slate-700">
   <div>
     <input
       class="hidden"
@@ -12,23 +12,23 @@
       [for]="'check' + todo()?.id"
     >
       <span
-        class="checkbox-inner flex items-center justify-center size-6 border-2 hover:bg-cyan-200 border-gray-300 rounded-full"
+        class="checkbox-inner flex items-center justify-center size-6 border-2 border-slate-300  dark:border-slate-700 hover:border-cyan-600  rounded-full"
         [ngClass]="{
-          'bg-gradient-to-br from-cyan-400 to-purple-700': todo()?.completed,
-          'bg-white': !todo()?.completed
+          'bg-gradient-to-br from-cyan-400 to-purple-700 hover:border-0 ': todo()?.completed,
+          
         }"
       >
         @if (todo()?.completed) {
-          <svg class="size-6 text-white" fill="currentColor">
+          <svg class="size-4 text-white" fill="currentColor">
             <use xlink:href="/images/icons.svg#check" />
           </svg>
         }
       </span>
-      <span [ngClass]="todo()?.completed ? 'line-through text-gray-400': 'text-light dark:text-dark' " class="mx-4 text-sm ">{{ todo()?.title }}</span>
+      <span [ngClass]="todo()?.completed ? 'line-through text-slate-300 dark:text-slate-700': 'text-light dark:text-dark' " class="mx-4 ">{{ todo()?.title }}</span>
     </label>
   </div>
   
-  <button (click)="deleteTodo()" class="text-gray-300 cursor-pointer hover:text-red-400">
+  <button (click)="deleteTodo()" class="text-slate-300 dark:text-slate-700 cursor-pointer hover:text-red-400">
     <svg class="size-6" fill="currentColor">
       <use xlink:href="/images/icons.svg#cancel" />
     </svg>

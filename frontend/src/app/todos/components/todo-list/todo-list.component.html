@@ -1,5 +1,5 @@
 <section class="flex flex-col items-center w-10/12 mx-auto -mt-8 rounded-lg bg-primary dark:bg-primary-dark">
-    <ul class="max-h-[297.6px] w-full overflow-y-auto  overflow-x-hidden [&::-webkit-scrollbar]:w-2
+    <ul class="max-h-[348px] w-full overflow-y-auto  overflow-x-hidden [&::-webkit-scrollbar]:w-2
     [&::-webkit-scrollbar-track]:
     [&::-webkit-scrollbar-track]:bg-transparent
     [&::-webkit-scrollbar-thumb]:rounded-full
@@ -8,8 +8,8 @@
       <todo-item (delete)="delete($event)" [todo]="todo" (toggle)="toggle($event)"></todo-item>
      }
     </ul>
-  <footer class=" flex justify-between w-full p-5  text-sm text-gray-400">
+  <footer class=" flex justify-between w-full p-5  text-sm text-slate-400 dark:text-slate-500">
     <p>{{todos()?.length}} items left</p>
-    <button class="cursor-pointer">Clear Completed</button>
+    <button class="hover:text-accent cursor-pointer">Clear Completed</button>
   </footer>
 </section>
