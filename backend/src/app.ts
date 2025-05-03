@@ -9,10 +9,11 @@ const app = express()
 const port = process.env.PORT
 
 const corsOptions: cors.CorsOptions = {
-  origin: ['http://localhost:4200', 'https://timely-cendol-dabb83.netlify.app/'], 
+  origin:'https://timely-cendol-dabb83.netlify.app', 
 };
 
 app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use('/tasks', taskRoutes);
 
