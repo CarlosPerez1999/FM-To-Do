@@ -1,5 +1,5 @@
 <section class=" flex justify-center items-center gap-5 w-10/12 m-auto mt-5  p-4 sm:p-2 sm:w-5/12 sm:-mt-13 rounded-lg  dark:bg-primary-dark font-bold text-slate-600 " >
   @for (filter of filters; track filter) {
-    <button (click)="filterData(filter)" [className]="selectedFilter() === filter ? 'text-accent' : ''" >{{filter}}</button>
+    <button (click)="filterData(filter)" class="cursor-pointer" [className]="selectedFilter() === filter ? 'text-accent' : ''" >{{filter}}</button>
   }
 </section>
