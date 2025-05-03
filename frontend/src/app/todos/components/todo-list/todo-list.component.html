@@ -1,12 +1,12 @@
 <section class="flex flex-col items-center w-10/12 mx-auto -mt-8 rounded-lg transition-colors duration-500 bg-primary dark:bg-primary-dark">
   @if (todos()?.length! > 0) {
-    <ul class="max-h-[348px] min-h-[348px] w-full overflow-y-auto  overflow-x-hidden [&::-webkit-scrollbar]:w-2
+    <ul cdkDropList (cdkDropListDropped)="drop($event)" class="max-h-[348px] min-h-[348px] w-full overflow-y-auto  overflow-x-hidden [&::-webkit-scrollbar]:w-2
       [&::-webkit-scrollbar-track]:
       [&::-webkit-scrollbar-track]:bg-transparent
       [&::-webkit-scrollbar-thumb]:rounded-full
       [&::-webkit-scrollbar-thumb]:bg-transparent ">
        @for (todo of todos(); track todo.id) {
-        <todo-item (delete)="delete($event)" [todo]="todo" (toggle)="toggle($event)"></todo-item>
+        <todo-item cdkDrag  (delete)="delete($event)" [todo]="todo" (toggle)="toggle($event)"></todo-item>
        }
       </ul>
   }@else {
