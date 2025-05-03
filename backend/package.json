@@ -10,7 +10,7 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "dev": "bunx nodemon src/app.ts"
+    "start": "bunx prisma migrate deploy && bun run ./src/app.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.6.0",
