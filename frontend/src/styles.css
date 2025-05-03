@@ -1,7 +1,17 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: "Josefina";
+  src: url("/fonts/Josefina.woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme{
+
+  --font-custom: "Josefina";
+
   --color-primary:hsl(0, 0%, 100%);
   --color-secondary:hsl(0, 0%, 98%);
   --color-light:hsl(235, 21%, 11%);
