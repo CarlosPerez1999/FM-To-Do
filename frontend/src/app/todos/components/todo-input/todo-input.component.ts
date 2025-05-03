@@ -7,12 +7,11 @@ import {FormsModule} from '@angular/forms'
 })
 export class TodoInputComponent {
   todoTitle = signal<string>("")
-  createEmmiter = output<string>()
+  create = output<string>()
 
 
   createTodo(){
-    this.createEmmiter.emit(this.todoTitle())
-    console.log(this.todoTitle())
+    this.create.emit(this.todoTitle())
     this.todoTitle.set("")
   }
 

@@ -21,7 +21,7 @@ export class TasksService {
     );
   }
 
-  createTask(data: TaskI): Observable<TaskI> {
+  createTask(data: Partial<TaskI>): Observable<TaskI> {
     return this.http.post<TaskI>(`${environment.apiUrl}/tasks`, data).pipe(
       tap((createdTask) =>
         this.tasks.update((currTasks) => [...currTasks, createdTask])
